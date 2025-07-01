@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presente Especial para Minha Irmã</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Pacifico&display=swap');
+        
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            font-family: 'Arial', sans-serif;
+            overflow-x: hidden;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #5a2a27;
+        }
+        
+        .container {
+            text-align: center;
+            position: relative;
+            z-index: 10;
+            max-width: 800px;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 2s;
+        }
+        
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            color: #d23669;
+        }
+        
+        .message {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        
+        .photo-collage {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+        }
+        
+        .photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+            object-fit: cover;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+        
+        .photo:hover {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            z-index: 20;
+        }
+        
+        .btn {
+            background-color: #d23669;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1.1em;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin: 10px;
+            box-shadow: 0 5px 15px rgba(210, 54, 105, 0.4);
+        }
+        
+        .btn:hover {
+            background-color: #a51c52;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(210, 54, 105, 0.6);
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        #surprise {
+            animation: pulse 2s infinite;
+        }
+        
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background-color: #f00;
+            opacity: 0;
+            z-index: 1;
+            animation: confettiFall 5s linear infinite;
+        }
+        
+        .highlights {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .highlights img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+        
+        .highlights img:hover {
+            transform: scale(1.05);
+        }
+        
+        .countdown {
+            font-size: 1.5em;
+            margin: 20px 0;
+            color: #d23669;
+            font-weight: bold;
+        }
+        
+        .more-photos {
+            font-style: italic;
+            color: #5a2a27;
+            margin: 15px 0;
+            width: 100%;
+        }
+        
+        @media (max-width: 600px) {
+            .highlights img {
+                width: 150px;
+                height: 150px;
+            }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        @keyframes confettiFall {
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        .memory {
+            background-color: #fff9f9;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+        
+        .memory h3 {
+            color: #d23669;
+            margin-top: 0;
+        }
+        
+        footer {
+            margin-top: 30px;
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Feliz Aniversário, Irmã!</h1>
+        
+        <div id="main-content">
+            <div class="message">
+                <p>Querida Luana, hoje é um dia especial porque o mundo ganhou você!</p>
+                <p>Neste dia, quero te lembrar que todo seu esforço, atenção e dedicação não passam despercebidos, 
+                    lembrar também o quanto você é importante para mim e para toda a sua família.</p>
+            </div>
+            
+            <div class="photo-collage">
+                <!-- colocando imagens -->
+                <img src="minhas_fotos/jg_lu.jpeg" alt="Nossa foto" class="photo">
+                <img src="minhas_fotos/ju_lu2.jpeg" alt="Nossa foto" class="photo">
+                <img src="minhas_fotos/pe_lu.jpeg" alt="Nossa foto" class="photo">
+                <img src="minhas_fotos/ca_lu.jpeg" alt="Nossa foto" class="photo">
+            </div>
+            
+            <button id="surprise" class="btn">Clique aqui!</button>
+            <button id="showMemories" class="btn">Lembranças Especiais</button>
+            <button id="photos" class="btn">Melhores momentos</button>
+        </div>
+        
+        <div id="photos-content" class="hidden">
+            <h2>Melhores momentos com a Lu</h2>
+            <div class="highlights">
+                <img src="destaques/mulheres_papai.jpeg" alt="Nossa foto">
+                <img src="destaques/pedrinho_pa_lu.jpeg" alt="Nossa foto">
+                <img src="destaques/pedrinho_lu.jpeg" alt="Nossa foto">
+                <img src="destaques/filhos.jpeg" alt="Nossa foto">
+            </div>
+            <p class="more-photos">Precisamos tirar mais fotos juntos!</p>
+            <button id="back-photos" class="btn">Voltar</button>
+        </div>
+        
+        <div id="surprise-content" class="hidden">
+            <h2>Você é incrível!</h2>
+            <div class="countdown" id="nextBirthday"></div>
+            <div class="message">
+                <p>So relembrando que você é:</p>
+                <ul style="text-align: left;">
+                    <li>Uma pessoa incrivelmente esforçada</li>
+                    <li>Uma filha dedicada e atenciosa</li>
+                    <li>Cheia de talentos</li>
+                    <li>Muito amada por todos</li>
+                </ul>
+                <p>Espero que seu dia seja tão especial quanto você é!</p>
+            </div>
+            <button id="back-btn" class="btn">Voltar</button>
+        </div>
+        
+        <div id="memories-content" class="hidden">
+            <h2>Nossas Lembranças</h2>
+            
+            <div class="memory">
+                <h3>Lembranças do seu irmão caçula</h3>
+                <p>Apesar de não ter uma memória muito boa lembro de você quando era criança, na verdade não são imagens em si, é algo mais parecido com sentimento...sentimento de confiança, de verdade, de amor.
+                    A gente pode não ter tanto contato quanto gostaria, mas nossa conexão vai além disso, nossa conexão passa por nossa corrente sanguínea. Sua jornada profissional é incrível e ao compartilhar
+                    esses momentos comigo me inspira a me esforça e dedicar energia da mesma forma. Ass: Jãozinho</p>
+            </div>
+            
+            <div class="memory">
+                <h3>Lembranças de juju</h3>
+                <p>Não costumo falar sobre sentimentos, mas hoje quero expressar o quanto você, Luana, é
+                 especial. Por sua causa estou conhecendo o outro lado do mundo, criando novas memórias e vivendo momentos únicos com você. Sempre quis saber como é ter uma irmã por perto e fico feliz que seja você! 
+                 Ver você de perto aumentou minha admiração e pude perceber como você é uma mulher incrível, mãe dedicada, paciente, protetora, alto astral, profissional admirada e uma irmã atenciosa. Sempre serei 
+                 grata a minha irmã do cabelo pleto misturado com blanco. Ass:Julinha</p>
+            </div>
+            
+            <div class="memory">
+                <h3>Top palavras da Catarina até o momento.</h3>
+                <p>Mamae...apt...mano...ai que susto...sai thor...oushi...me solta...aleca...popo...teteia...banana...agua...têtê...pepeta...muié...achouuu</p>
+            </div>
+            
+            <button id="back-memories" class="btn">Voltar</button>
+        </div>
+        
+        <footer>
+            Com todo meu amor, seu irmão.
+        </footer>
+    </div>
+    
+    <audio id="bgMusic" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+        <!-- Substitua pelo link de uma música que sua irmã goste -->
+    </audio>
+    
+    <script>
+        // Cria confetes
+        function createConfetti() {
+            const colors = ['#f44336', '#e91e63', '#9c27b0', '#673ab7', '#3f51b5', '#2196f3', '#03a9f4', '#00bcd4', '#009688', '#4CAF50', '#8BC34A', '#CDDC39', '#FFEB3B', '#FFC107', '#FF9800', '#FF5722'];
+            
+            for (let i = 0; i < 100; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.width = Math.random() * 10 + 5 + 'px';
+                confetti.style.height = Math.random() * 10 + 5 + 'px';
+                confetti.style.animationDuration = Math.random() * 3 + 2 + 's';
+                confetti.style.animationDelay = Math.random() * 2 + 's';
+                document.body.appendChild(confetti);
+            }
+        }
+        
+        // Calcula a contagem regressiva para o próximo aniversário
+        function updateCountdown() {
+            const now = new Date();
+            const currentYear = now.getFullYear();
+            // Próximo aniversário é 1 de julho do próximo ano
+            let nextBirthday = new Date(currentYear + 1, 6, 1); // Mês é 0-indexed (6 = julho)
+            
+            // Se já passou o aniversário deste ano, usar este ano
+            if (now.getMonth() < 6 || (now.getMonth() === 6 && now.getDate() < 1)) {
+                nextBirthday = new Date(currentYear, 6, 1);
+            }
+            
+            const diff = nextBirthday - now;
+            
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            document.getElementById('nextBirthday').innerHTML = 
+                `Próximo aniversário em: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+        }
+        
+        // Atualiza a contagem regressiva a cada segundo
+        setInterval(updateCountdown, 1000);
+        updateCountdown(); // Chamada inicial
+        
+        // Controles da música
+        const music = document.getElementById('bgMusic');
+        music.volume = 0.3;
+        
+        // Espera interação do usuário para tocar música
+        document.body.addEventListener('click', function() {
+            music.play().catch(e => console.log("Autoplay bloqueado"));
+        }, { once: true });
+        
+        // Botões interativos
+        document.getElementById('surprise').addEventListener('click', function() {
+            document.getElementById('main-content').classList.add('hidden');
+            document.getElementById('surprise-content').classList.remove('hidden');
+            createConfetti();
+        });
+        
+        document.getElementById('showMemories').addEventListener('click', function() {
+            document.getElementById('main-content').classList.add('hidden');
+            document.getElementById('memories-content').classList.remove('hidden');
+        });
+        
+        document.getElementById('photos').addEventListener('click', function() {
+            document.getElementById('main-content').classList.add('hidden');
+            document.getElementById('photos-content').classList.remove('hidden');
+        });
+        
+        document.getElementById('back-btn').addEventListener('click', function() {
+            document.getElementById('surprise-content').classList.add('hidden');
+            document.getElementById('main-content').classList.remove('hidden');
+        });
+        
+        document.getElementById('back-memories').addEventListener('click', function() {
+            document.getElementById('memories-content').classList.add('hidden');
+            document.getElementById('main-content').classList.remove('hidden');
+        });
+        
+        document.getElementById('back-photos').addEventListener('click', function() {
+            document.getElementById('photos-content').classList.add('hidden');
+            document.getElementById('main-content').classList.remove('hidden');
+        });
+        
+        // Efeito nas fotos
+        const photos = document.querySelectorAll('.photo');
+        photos.forEach(photo => {
+            photo.addEventListener('click', function() {
+                this.style.transform = 'scale(1.8) rotate(0deg)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 1000);
+            });
+        });
+    </script>
+</body>
+</html>
